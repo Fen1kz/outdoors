@@ -1,0 +1,16 @@
+body {
+  background: #FFF;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-container {
+  display: flex;
+}
+
+.menu .item {
+  margin: 1em;
+}

@@ -1,0 +1,7 @@
+{% macro renderThing(thing) %}
+  <div class="thing">
+    <div class="thing__img"><img src="{{ thing.img }}"/></div>
+    <div class="thing__name">{{ thing.name }}</div>
+    <div class="thing__desc">{{ thing.desc }}</div>
+  </div>
+{% endmacro %}

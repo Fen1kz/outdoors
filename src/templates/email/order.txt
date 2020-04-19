@@ -1,0 +1,4 @@
+Новый заказ от {{data.name}} {{data.email}}:{% for thing in data.things %}
++ {{thing.name}}: {{thing.count}} ({{thing.id}}){% endfor %}
+Сумма показанная клиенту: {{data.total}}
+Комментарий: {{data.comment}}

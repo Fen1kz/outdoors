@@ -1,16 +1,17 @@
-from flask import Flask, render_template, g, send_from_directory
-from util.getStuff import getStuff
+from dotenv import load_dotenv
+load_dotenv()
 
-app = Flask(__name__)
+import sys
+import logging
 
-with app.app_context():
-  g.stuff = getStuff()
+handler = logging.StreamHandler(sys.stdout)
+handler.setFormatter(logging.Formatter(
+  '%(asctime)s|%(name)s[%(levelname)s]: %(message)s',
+  "%dT%H:%M:%S"
+  ))
 
-@app.route('/')
-def hello_world():
-  g.stuff = getStuff()
-  return render_template('main.html')
+from app import create_app
 
-@app.route('/img/<path:path>')
-def send_img(path):
-  return send_from_directory('../img', path)
+app = create_app();
+app.logger.addHandler(handler)
+app.logger.setLevel(logging.DEBUG)

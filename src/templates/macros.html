@@ -1,7 +1,32 @@
+{% macro renderCollection(collection) %}
+  <div class="collection">
+    <a class="collection__name h2" href='/c/{{collection.id}}'>{{collection.name}}</a>
+    <div class="collection__items">
+      {% for thing in collection.things %}
+        {{renderThing(thing)}}
+      {% endfor %}
+    </div>
+  </div>
+{% endmacro %}
+
 {% macro renderThing(thing) %}
-  <div class="thing">
-    <div class="thing__img"><img src="{{ thing.img }}"/></div>
-    <div class="thing__name">{{ thing.name }}</div>
+  <div class="thing" data-id="{{thing.id}}">
+    <div class="thing__img-wrapper">
+      {% for img in thing.imgs %}
+        {% if loop.index0 == 0 %}        
+          <a href="{{ img }}" data-lightbox="{{thing.id}}">
+            <img class='thing__img' src="{{ img }}" alt="{{thing.name}}"/>
+          </a>
+        {% else %}
+          <a class="hidden" href="{{ img }}" data-lightbox="{{thing.id}}">{{thing.name}}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="thing__title">
+      <a class="thing__name" href='/t/{{thing.id}}'>{{ thing.name }}</a>
+      <div class="thing__price">{{ thing.price }}</div>
+    </div>
     <div class="thing__desc">{{ thing.desc }}</div>
+    <button class="thing__btn-add btn btn-link">Add to cart</button>
   </div>
 {% endmacro %}

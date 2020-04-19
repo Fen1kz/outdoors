@@ -1,0 +1,7 @@
+{
+  "collections": ["dogs"],
+  "name": "Собаак",
+  "desc": "sobachka",
+  "price": 15.12,
+  "imgs": ["dog.jpg"]
+}

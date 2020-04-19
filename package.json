@@ -1,0 +1,39 @@
+{
+  "name": "outdoors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webapp/index.js",
+  "scripts": {
+    "watch:ui": "parcel watch webapp/index.js --out-dir webapp-dist",
+    "build:lightbox": "cp -R ./node_modules/lightbox2/dist/* ./webapp-dist/lightbox"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fen1kz/outdoors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fen1kz/outdoors/issues"
+  },
+  "homepage": "https://github.com/Fen1kz/outdoors#readme",
+  "staticFiles": {
+    "staticPath": {
+      "staticPath": "node_modules/lightbox2/dist",
+      "staticOutDir": "lightbox"
+    }
+  },
+  "dependencies": {
+    "immer": "^6.0.3",
+    "lightbox2": "^2.11.1",
+    "parcel-plugin-static-files-copy": "^2.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4"
+  }
+}

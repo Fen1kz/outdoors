@@ -1,0 +1,195 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &__item { 
+    margin: 1em;
+    font-size: 3vw;
+
+    &--active {
+      color: red;
+    }
+  }
+}
+
+.app-alert {
+  font-size: 2em;
+  position: fixed;
+  right: 100px;
+  top: -300px;
+  transition: top .25s ease-in;
+  &.alert-success {
+    font-size: 3em;
+  }
+  &--show {
+    top: 100px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.content {
+  padding: 2em;
+}
+
+.bucket-preview {
+  $size: 64px;
+
+  position: fixed;
+  top: 128px;
+  right: 64px;
+
+  background: white;
+  border-radius: $size;
+
+  &__img {
+    width: $size;
+    height: $size;
+  }
+
+  &__count {
+    position: absolute;
+    right: $size / 3;
+    bottom: 0;
+
+    font-size: 1.3em;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    line-height: 1em;
+    
+    border-radius: 50%;
+    background: red;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.modal-bucket {
+  &__dialog {
+    height: 90%;
+    display: flex;
+  }
+  &__content {
+    flex: 1;
+  }
+  &__body {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 0;
+    min-height: 0;  
+  }
+}
+
+.bucket-list {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+
+  .bucket-thing {
+    align-items: center;
+    
+    border-bottom: 1px #777;
+    padding: 0 0 1em;
+    margin: 0 1em 1em;
+
+
+    &__img {
+      max-width: 100px;
+    }
+
+    &__ctrls {
+      display: flex;
+      flex: 0 0 7em;
+    }
+
+    &__ctrl {
+      &__text {
+        font-size: 30px;
+        line-height: 0;
+        vertical-align: sub;
+        font-weight: bold;
+      }      
+    }
+
+    &__count {
+      margin: 0 .5em;
+      width: 5em;
+    }
+  }
+
+  &__total {
+    text-align: center;
+  }
+}
+
+.collection {
+  &__name {
+    font-weight: bold;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+
+    .thing {
+      margin: 20px;
+    }
+  }  
+}
+
+.thing {
+  min-width: 150px;
+  min-height: 150px;
+
+  &__img-wrapper {
+    text-align: center;
+  }
+  
+  &__img {
+    max-height: 200px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
+  &__desc {
+    font-size: 0.8em;
+    color: #777;
+  }
+
+  &__btn-add {
+    cursor: pointer;
+  }
+}
+
+.checkout-form {
+  overflow: auto;
+  padding: 8px;
+  
+  &__description {
+    margin: 0 0 1em;
+  }
+
+  .required {
+    font-size: 0.8em;
+  }
+}

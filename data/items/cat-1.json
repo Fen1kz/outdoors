@@ -1,0 +1,7 @@
+{
+  "collections": ["cats"],
+  "name": "Котик",
+  "desc": "Милый котик",
+  "price": 4,
+  "imgs": ["cat.jpg", "cat2.jpg"]
+}

@@ -1,0 +1,7 @@
+{
+  "collections": ["racoons"],
+  "name": "Енотик",
+  "desc": "енотичка ",
+  "price": 666,
+  "imgs": ["enot1.png"]
+}

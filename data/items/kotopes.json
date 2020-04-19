@@ -1,0 +1,7 @@
+{
+  "collections": ["cats", "dogs"],
+  "name": "КОТОПЕС",
+  "desc": "малыш котопес",
+  "price": 1331,
+  "imgs": ["kotopes.jpg"]
+}

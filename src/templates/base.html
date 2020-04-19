@@ -1,0 +1,59 @@
+{% set navbar = [
+  ('/', 'index', 'Каталог'),
+  ('/delivery', 'delivery', 'Доставка и оплата'),
+  ('/contacts', 'contacts', 'Контакты')
+] %}
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    {% block head %}
+    <meta charset="UTF-8">
+
+    <script defer crossorigin src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script defer crossorigin src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <!--link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('webapp', filename='lightbox/css/lightbox.min.css') }}">
+    
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script defer src="{{ url_for('webapp', filename='index.js') }}"></script>
+    <script defer src="{{ url_for('webapp', filename='lightbox/js/lightbox.min.js') }}"></script>
+
+    <script>
+      window.thingById = {{ data.thingById | tojson }}
+    </script>
+
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar__container">
+        {% for (href, id, name) in navbar %}
+          <a class="
+            display-4
+            navbar__item
+            {% if id == active_page %}navbar__item--active{% endif %}
+            "
+            href="{{ href }}"
+          >
+            {{ name }}
+          </a>
+        {% endfor %}
+        <div class="navbar__item display-4">+79119119191</div>
+      </div>
+    </header>
+    <div class="container-fluid content">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <div id='bucket-app'></div>
+  </body>
+</html>

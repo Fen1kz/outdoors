@@ -24,7 +24,7 @@
     }
   },
   "dependencies": {
-    "immer": "^6.0.3",
+    "immer": "^8.0.1",
     "lightbox2": "^2.11.1",
     "parcel-plugin-static-files-copy": "^2.3.1",
     "react": "^16.13.1",
